@@ -2,10 +2,12 @@ import React from 'react';
 // import { NavigationContainer } from 'react-navigation';
 // import AppNavigator from './src/AppNavigator';
 import WelcomeScreen from './src/screens/WelcomeScreen';
-import {  Text } from 'react-native';
+import RegisterScreen from './src/screens/RegisterScreen';
+// import {  Text } from 'react-native';
 function App() {
   return (
-    <WelcomeScreen />
+    // <WelcomeScreen />
+    <RegisterScreen />
   );
 }
 
