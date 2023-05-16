@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text } from "react-native"
+import FormInput from "../components/FormInput";
 
 export default function RegisterScreen() {
     return (
@@ -8,6 +9,7 @@ export default function RegisterScreen() {
                 <Text style={styles.appName} >Supa<Text style={styles.yellow}>Menu</Text></Text>
                 <Text style={styles.welcome}>Welcome ...</Text>
                 <Text style={{ fontWeight: "bold", textAlign: "center", marginTop: 10 }} >Please Fill in the information</Text>
+                <FormInput initialText="Full Name" iconName="user-o" />
             </View>
         </View>
     )
