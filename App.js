@@ -6,8 +6,8 @@ import RegisterScreen from './src/screens/RegisterScreen';
 // import {  Text } from 'react-native';
 function App() {
   return (
-    // <WelcomeScreen />
-    <RegisterScreen />
+    <WelcomeScreen />
+    // <RegisterScreen />
   );
 }
 
