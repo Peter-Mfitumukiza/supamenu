@@ -1,21 +1,24 @@
-import { View, StyleSheet, Text, Button, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet } from 'react-native';
+import IconButton from '../components/IconButton';
 import FormInput from "../components/FormInput";
 import FormButton from "../components/FormButton";
+import GoogleIcon from "../../assets/google-icon.png";
 
-export default function RegisterScreen() {
+export default function LoginScreen() {
+    const handleGoogleLogin = () => {
+        console.log("Google Login")
+    }
     return (
         <View style={styles.mainContainer}>
             <View style={{ flex: 1 }}></View>
             <View style={styles.secondContainer}>
                 <Text style={styles.appName} >Supa<Text style={styles.yellow}>Menu</Text></Text>
                 <Text style={styles.welcome}>Welcome ...</Text>
-                <Text style={styles.normalText} >Please fill in the information</Text>
+                <Text style={styles.normalText} >Sign in to continue</Text>
                 <View style={styles.formContainer}>
-                    <FormInput initialText="Full Name" iconName="user-o" />
-                    <FormInput initialText="Phone Number" iconName="phone" />
                     <FormInput initialText="Email" iconName="envelope-o" />
                     <FormInput initialText="Password" iconName="unlock-alt" />
-                    <FormButton textValue="Proceed" />
+                    <FormButton textValue="Sign In" />
                 </View>
                 <View style={{
                     flexDirection: "row",
@@ -29,8 +32,8 @@ export default function RegisterScreen() {
                     <Text> OR </Text>
                     <View style={{ borderColor: "#9FA2B4", borderWidth: 1, width: 120 }}></View>
                 </View>
-                <Text style={styles.normalText}>If you have a PGM account</Text>
-                <FormButton textValue="Sign In" />
+                <IconButton icon={GoogleIcon} text="Continue with Google" onPress={handleGoogleLogin} />
+                <Text style={styles.normalText}>Forgot password?</Text>
                 <Text style={styles.normalText}>Don't have an account? <Text style={styles.yellow}>Register</Text></Text>
             </View>
         </View>
