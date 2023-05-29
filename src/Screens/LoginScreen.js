@@ -1,12 +1,23 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 import IconButton from '../components/IconButton';
 import FormInput from "../components/FormInput";
 import FormButton from "../components/FormButton";
 import GoogleIcon from "../../assets/google-icon.png";
+import FacebookIcon from "../../assets/facebook-icon.png";
 
 export default function LoginScreen() {
+
+    const navigation = useNavigation();
+
     const handleGoogleLogin = () => {
         console.log("Google Login")
+    }
+    const handleFacebookLogin = () => {
+        consoele.log("Facebook Login")
+    }
+    const navigateToRegister = () => {
+        navigation.navigate("Register");
     }
     return (
         <View style={styles.mainContainer}>
@@ -26,15 +37,28 @@ export default function LoginScreen() {
                     alignItems: "center",
                     paddingLeft: 25,
                     paddingRight: 25,
-                    marginTop: 10
+                    marginTop: 10,
+                    marginBottom: 40
                 }}>
                     <View style={{ borderColor: "#9FA2B4", borderWidth: 1, width: 120 }}></View>
                     <Text> OR </Text>
                     <View style={{ borderColor: "#9FA2B4", borderWidth: 1, width: 120 }}></View>
                 </View>
                 <IconButton icon={GoogleIcon} text="Continue with Google" onPress={handleGoogleLogin} />
-                <Text style={styles.normalText}>Forgot password?</Text>
-                <Text style={styles.normalText}>Don't have an account? <Text style={styles.yellow}>Register</Text></Text>
+                <IconButton icon={FacebookIcon} text="Continue with Facebook" onPress={handleFacebookLogin} />
+                <TouchableOpacity>
+                    <Text style={{
+                        fontFamily: 'Roboto',
+                        textAlign: "center",
+                        marginTop: 10,
+                        color: "#F7941D",
+                        fontSize: 17,
+                        fontWeight: 'bold'
+                    }}>Forgot password?</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={navigateToRegister}>
+                    <Text style={styles.normalText}>Don't have an account? <Text style={styles.yellow}>Register</Text></Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -73,8 +97,6 @@ const styles = StyleSheet.create({
     },
     formContainer: {
         marginTop: 30,
-        // paddingLeft: 20,
-        // paddingRight: 20,
     },
     normalText: {
         fontFamily: 'Roboto',

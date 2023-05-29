@@ -1,9 +1,9 @@
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-export default function FormButton({ textValue }){
+export default function FormButton({ textValue, handleOnPress }){
     
     return(
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleOnPress}>
             <Text style={styles.buttonText}>{ textValue }</Text>
         </TouchableOpacity>
     )

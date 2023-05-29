@@ -1,8 +1,13 @@
 import { View, StyleSheet, Text, Button, TouchableOpacity } from "react-native"
 import FormInput from "../components/FormInput";
 import FormButton from "../components/FormButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function RegisterScreen() {
+    const navigation = useNavigation();
+    const navigateToLogin = () => {
+        navigation.navigate("Login")
+    }
     return (
         <View style={styles.mainContainer}>
             <View style={{ flex: 1 }}></View>
@@ -30,7 +35,7 @@ export default function RegisterScreen() {
                     <View style={{ borderColor: "#9FA2B4", borderWidth: 1, width: 120 }}></View>
                 </View>
                 <Text style={styles.normalText}>If you have a PGM account</Text>
-                <FormButton textValue="Sign In" />
+                <FormButton handleOnPress={navigateToLogin} textValue="Sign In" />
                 <Text style={styles.normalText}>Don't have an account? <Text style={styles.yellow}>Register</Text></Text>
             </View>
         </View>
