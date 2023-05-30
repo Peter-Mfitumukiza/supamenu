@@ -28,9 +28,5 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         fontSize: 16,
         color: "#9FA2B4"
-    },
-    icon:{
-        // width: 20,
-        // backgroundColor: "red",
     }
 })
