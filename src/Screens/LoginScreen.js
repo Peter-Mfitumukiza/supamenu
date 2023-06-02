@@ -24,7 +24,6 @@ export default function LoginScreen() {
 
   const navigateToSearch = () => {
     navigation.navigate('Search');
-    console.log('navigate to search');
   };
 
   return (

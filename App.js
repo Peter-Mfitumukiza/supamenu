@@ -6,6 +6,7 @@ import WelcomeScreen from './src/screens/WelcomeScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SearchScreen from './src/screens/SearchScreen';
+import SearchResultScreen from './src/screens/SearchResultScreen';
 
 // Create a stack navigator
 const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ function App() {
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="SearchResult" component={SearchResultScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

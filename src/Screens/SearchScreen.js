@@ -1,7 +1,13 @@
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import QRCodeImage from '../../assets/qr-code.png';
+
 export default SearchScreen = () => {
+    const navigation = useNavigation();
+    const handleOnFocus = () => {
+        navigation.navigate('SearchResult')
+    }
     return (
         <View style={styles.mainContainer}>
             <View style={styles.container}>
@@ -9,6 +15,7 @@ export default SearchScreen = () => {
                 <TextInput
                     style={styles.input}
                     placeholder="Search for your prefered restaurant"
+                    onFocus={handleOnFocus}
                 />
             </View>
             <Text style= {{
